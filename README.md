@@ -1,22 +1,17 @@
-# Polymer App Toolbox - Starter Kit
+# InterIntel FrontEnd Test
 
 [![Build Status](https://travis-ci.org/Polymer/polymer-starter-kit.svg?branch=master)](https://travis-ci.org/Polymer/polymer-starter-kit)
 
-This template is a starting point for building apps using a drawer-based
-layout. The layout is provided by `app-layout` elements.
+This is a Todo Web Applicatication built using PolymerJs Emphasizing On Lit Element Library
 
-This template, along with the `polymer-cli` toolchain, also demonstrates use
-of the "PRPL pattern" This pattern allows fast first delivery and interaction with
-the content at the initial route requested by the user, along with fast subsequent
-navigation by pre-caching the remaining components required by the app and
-progressively loading them on-demand as the user navigates through the app.
+The Main Highlights that were achived during this project are:
 
-The PRPL pattern, in a nutshell:
+* **Converted** PolymerElements to LitElements Successfully
+* **Displayed** Form using Bulma Css (though using granite-elements) and captured users **Name**, **Email** and **Phone number** upon submission        displayed on the console and the Alert box. 
+* **Called First Updated Lifecycle Method** successfully and called **json API** so as to get todos data and display them in a card using JS map function  
+* **Displayed Plan for user to Subscribe to Todo Application** using bulma css and javacript static data to display plans
 
-* **Push** components required for the initial route
-* **Render** initial route ASAP
-* **Pre-cache** components for remaining routes
-* **Lazy-load** and progressively upgrade next routes on-demand
+* **Sorted dictionary data of numbers** in asscending order and displayed the data in the **MyView3** Element
 
 ### Setup
 
