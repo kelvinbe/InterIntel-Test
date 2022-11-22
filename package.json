@@ -25,7 +25,6 @@
     "@polymer/polymer": "^3.0.0",
     "@webcomponents/webcomponentsjs": "^2.0.0",
     "bulma": "^0.9.4",
-    "bulma-pricingtable": "^0.2.0",
     "lit-element": "^3.2.2"
   },
   "devDependencies": {
