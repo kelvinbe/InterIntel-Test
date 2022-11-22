@@ -72,7 +72,19 @@ class MyView3 extends LitElement {
     let show;
 
     if(this.todos.length === 0){
-      show = html`<div class='progressing'><progress class="progress is-success" max="100">60%</progress></div>`
+      show = html`
+
+<div class="card">
+   <div class="card-content">
+     <div class="content">
+       <h3 class= "title is-4">Loading...</h3>
+       <progress class="progress is-success" max="100">60%</progress>
+     </div>
+   </div>
+ </div>
+      
+      
+      `
     }else{
       show =  html` 
        <div>
