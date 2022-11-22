@@ -56,6 +56,7 @@ class MyView1 extends LitElement {
     console.log('name', this.name)
     console.log('email', this.email)
     console.log('phone', this.phone)
+    console.log('phone', this.phone)
 
     let details = {
       name: this.name,
