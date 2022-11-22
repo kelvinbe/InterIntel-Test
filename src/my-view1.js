@@ -57,13 +57,16 @@ class MyView1 extends LitElement {
     console.log('email', this.email)
     console.log('phone', this.phone)
 
-    const details = {
+    let details = {
       name: this.name,
       email: this.email,
       phone: this.phone
     }
 
-    alert(JSON.stringify(details))
+    details = JSON.stringify(details).replace(/[{}]/g, '')
+
+
+    alert(details)
   }
 
   static get styles() {
