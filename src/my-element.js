@@ -16,18 +16,34 @@ class MyElement extends LitElement {
   static get properties() {
     return {
       plans: { type: Array },
+      show: {type: Boolean}
     };
   }
 
   constructor() {
     super();
 
+
+    this.show = false
     this.plans = [
-      { name: "Starter", price: "20/month", NoTodos: 10, image: "https://cdn.dribbble.com/users/6569/screenshots/16482169/media/de475cb79969a810d45ba9b5d8cbf4a5.png?compress=1&resize=400x300&vertical=top"  },
-      { name: "Dive", price: "40/month", NoTodos: 30, image: "https://img.freepik.com/free-vector/scuba-diver-cartoon-sticker_1308-79208.jpg?w=2000" },
-      { name: "Turbo", price: "60/month", NoTodos: 50, image: "https://cdn.hswstatic.com/gif/turbo-update.jpg" },
-      { name: "Full Turbo", price: "1000/month", NoTodos: 150, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAbG53p_5vUPSxTW8WkqfprLZZWmI9yFTqXw&usqp=CAU" },
+      { name: "Starter", price: "20ksh/month", NoTodos: `${10} todos`, image: "https://cdn.dribbble.com/users/6569/screenshots/16482169/media/de475cb79969a810d45ba9b5d8cbf4a5.png?compress=1&resize=400x300&vertical=top"  },
+      { name: "Dive", price: "40ksh/month", NoTodos: `${30} todos`, image: "https://img.freepik.com/free-vector/scuba-diver-cartoon-sticker_1308-79208.jpg?w=2000" },
+      { name: "Turbo", price: "60ksh/month", NoTodos: `${50} todos`, image: "https://cdn.hswstatic.com/gif/turbo-update.jpg" },
+      { name: "Full Turbo", price: "1000/month", NoTodos: `${150} todos`, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAbG53p_5vUPSxTW8WkqfprLZZWmI9yFTqXw&usqp=CAU" },
     ];
+  }
+
+
+  async firstUpdated(changedProperties) {
+    super.firstUpdated(changedProperties);
+
+   setTimeout(() => {
+    
+
+    this.show = true
+
+   }, 5000) 
+
   }
 
   static get styles() {
@@ -35,40 +51,70 @@ class MyElement extends LitElement {
   }
 
   render() {
-    return html`
+
+    let display
+
+    if(this.show === false){
+
+      display = html`
+      
       <div class="card">
-        ${this.plans.map(
-          (plan) => html` <div class="card">
-            <div class="columns is-centered">
-              <div class="column is-half">
-                <!-- Your card code: -->
-                <div class="card">
-                  <div class="card-image">
-                    <figure class="image is-4by3">
-                      <img
-                        src=${plan.image}
-                        alt="Placeholder image"
-                      />
-                    </figure>
-                  </div>
-                  <div class="card-content">
-                    <div class="content">
-                      ${plan.name}
-                      <br />
+   <div class="card-content">
+     <div class="media">
+       <div class="media-content">
+         <p class="title is-4">Welcome to Get it done Todo App Price Packages</p>
+       </div>
+     </div>
+ 
+     <div class="content">
+       <p>Sign Up to get started</p>
+       <progress class="progress is-success" max="100">60%</progress>
+     </div>
+   </div>
+ </div>
+      `
 
-                      ${plan.price}
-                      <br />
+    }else{
+      display = html`
+      ${this.plans.map(
+        (plan) => html` <div class="card">
+          <div class="columns is-centered">
+            <div class="column is-half">
+              <!-- Your card code: -->
+              <div class="card">
+                <div class="card-image">
+                  <figure class="image is-4by3">
+                    <img
+                      src=${plan.image}
+                      alt="Placeholder image"
+                    />
+                  </figure>
+                </div>
+                <div class="card-content">
+                  <div class="content">
+                    ${plan.name}
+                    <br />
 
-                      ${plan.NoTodos}
-                      <br />
-                    </div>
+                    ${plan.price}
+                    <br />
+
+                    ${plan.NoTodos}
+                    <br />
+                    
                   </div>
                 </div>
               </div>
             </div>
-          </div>`
-        )}
-      </div>
+          </div>
+        </div>`
+      )}
+    `
+    }
+
+    
+
+    return html`
+      <div class="card">${display}</div>
     `;
   }
 }

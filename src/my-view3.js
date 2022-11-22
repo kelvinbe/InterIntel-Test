@@ -41,11 +41,22 @@ class MyView3 extends LitElement {
 
    const response = await fetch('https://jsonplaceholder.typicode.com/todos?_limit=5')
    const todoItems = await response.json()
-   
 
+
+   setTimeout(() => {
     this.todos = [...todoItems]
 
+
+   }, 5000)
+   
+   console.log('todosInTimeout', this.todos)
+
+    this.todos = []
+
+
     console.log('todos', this.todos)
+    console.log('length', this.todos.length)
+
   }
 
 
@@ -57,34 +68,40 @@ class MyView3 extends LitElement {
 
 
   render() {
-     return html`
-      <div class="card">
-        
-      <div>
-      ${this.todos.map( todo => html`
-      
-      <div class="card">
-  <div class="card-content">
-    <div class="media">
-      <div class="media-content">
-        <p class="title is-4">${todo.title}</p>
-      </div>
-    </div>
 
-    <div class="content">
-      <p>${todo.completed}</p>
-    </div>
-  </div>
-</div>
-      `)}
-  </div>
+    let show;
 
-      <div>
-    <my-view4></my-view4>
-      </div>
-
-      </div>
-    `;
+    if(this.todos.length === 0){
+      show = html`<div class='progressing'><progress class="progress is-success" max="100">60%</progress></div>`
+    }else{
+      show =  html` 
+       <div>
+       ${this.todos.map( todo => html`
+       
+       <div class="card">
+   <div class="card-content">
+     <div class="media">
+       <div class="media-content">
+         <p class="title is-4">${todo.title}</p>
+       </div>
+     </div>
+ 
+     <div class="content">
+       <p>${todo.completed}</p>
+     </div>
+   </div>
+ </div>
+       `)}
+   </div>
+ 
+       <div>
+     <my-view4></my-view4>
+       </div>
+ 
+       
+     `
+    }
+     return html `<div class="card">${show}</div>`
   }
 }
 

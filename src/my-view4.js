@@ -73,6 +73,7 @@ for (const [key, value] of Object.entries(...sortedDic)) {
 
 
   render () {
+    
     return html`
     <div class="card">
         
