@@ -29,7 +29,7 @@ class MyElement extends LitElement {
       { name: "Starter", price: "20ksh/month", NoTodos: `${10} todos`, image: "https://cdn.dribbble.com/users/6569/screenshots/16482169/media/de475cb79969a810d45ba9b5d8cbf4a5.png?compress=1&resize=400x300&vertical=top"  },
       { name: "Dive", price: "40ksh/month", NoTodos: `${30} todos`, image: "https://img.freepik.com/free-vector/scuba-diver-cartoon-sticker_1308-79208.jpg?w=2000" },
       { name: "Turbo", price: "60ksh/month", NoTodos: `${50} todos`, image: "https://cdn.hswstatic.com/gif/turbo-update.jpg" },
-      { name: "Full Turbo", price: "1000/month", NoTodos: `${150} todos`, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAbG53p_5vUPSxTW8WkqfprLZZWmI9yFTqXw&usqp=CAU" },
+      { name: "Full Turbo", price: "1000ksh/month", NoTodos: `${150} todos`, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAbG53p_5vUPSxTW8WkqfprLZZWmI9yFTqXw&usqp=CAU" },
     ];
   }
 
