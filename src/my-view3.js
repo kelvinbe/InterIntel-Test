@@ -86,7 +86,7 @@ class MyView3 extends LitElement {
        </div>
      </div>
  
-     <div class="content">
+     <div class="title is-4">
        <p>${todo.completed}</p>
      </div>
    </div>

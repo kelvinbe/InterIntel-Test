@@ -67,7 +67,7 @@ class MyElement extends LitElement {
      </div>
  
      <div class="content">
-       <p>Sign Up to get started</p>
+       <h3 class= "title is-4">Sign Up to get started</h3>
        <progress class="progress is-success" max="100">60%</progress>
      </div>
    </div>
@@ -91,7 +91,7 @@ class MyElement extends LitElement {
                   </figure>
                 </div>
                 <div class="card-content">
-                  <div class="content">
+                  <div class="title is-4">
                     ${plan.name}
                     <br />
 

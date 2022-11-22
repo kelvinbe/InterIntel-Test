@@ -76,7 +76,7 @@ for (const [key, value] of Object.entries(...sortedDic)) {
     
     return html`
     <div class="card">
-        
+        <h2 class="title is-4">Ordered Data</h2>
         <div>
         ${JSON.stringify(...this.numbers)}
     </div>
