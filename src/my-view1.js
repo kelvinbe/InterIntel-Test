@@ -104,8 +104,8 @@ render (){
     <input class="input" type="text" placeholder="Phone Number" @input=${this.handleOnChangePhone}>
   </div>
 </div>
-<div class="field is-grouped">
-  <div class="control">
+<div class="field is-grouped" style="display: flex; justify-content: center">
+  <div class="control" >
     <button class="button is-link" @click=${this.handleSubmit}>Submit</button>
   </div>
   </div>
