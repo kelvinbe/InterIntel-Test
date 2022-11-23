@@ -111,7 +111,7 @@ render (){
           <br>
           <strong>WELCOME TO THE SIMPLE GET IT DONE TODO APPLICATION</strong> 
         </p>
-        <small>Sign up to view your name in the console and the alert box</small> 
+        <small>Sign up to view your name to see them displayed in the console and the alert box</small> 
 
       </div>
       <nav class="level is-mobile">
