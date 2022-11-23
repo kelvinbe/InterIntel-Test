@@ -17,7 +17,8 @@ class MyElement extends LitElement {
     return {
       plans: { type: Array },
       show: {type: Boolean},
-      hidden: {type: Boolean}
+      hidden: {type: Boolean},
+      isActive: {type: Boolean}
     };
   }
 
@@ -33,8 +34,16 @@ class MyElement extends LitElement {
       { name: "Full Turbo", price: "1000ksh/month", NoTodos: `${150} todos`, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAbG53p_5vUPSxTW8WkqfprLZZWmI9yFTqXw&usqp=CAU" },
     ];
 
-    this.isActive = true
+    this.isActive = false
     this.hidden = true
+  }
+
+
+  handleActive(){
+
+    console.log('i was hit')
+
+    this.isActive = !this.isActive
   }
 
 
@@ -100,7 +109,7 @@ class MyElement extends LitElement {
                     />
                   </figure>
                 </div>
-                <div class="card-content">
+                <div class="card-content" style="text-align: center">
                   <div class="title is-4" style="text-align: center">
                     ${plan.name}
                     <br />
@@ -112,7 +121,56 @@ class MyElement extends LitElement {
                     <br />
                     
                   </div>
+                  <button @click=${this.handleActive}  class="button is-info is-outlined">Information</button>
                 </div>
+        <div class=${this.isActive ? "modal is-active": "modal"}>
+  <div class="modal-background"></div>
+  <div class="modal-content">
+  <div class="box">
+  <article class="media">
+  <div class="media-left">
+      <figure class="image">
+        <img src="https://i.gifer.com/P4id.gif" alt="Image" style='width: 200px'>
+      </figure>
+    </div>
+    <div class="media-content">
+      <div class="content">
+        <p>
+          <strong>Package Information</strong>
+          <br>
+          <strong>Affordable yet good terms</strong> 
+        </p>
+        <small>Join Today</small> 
+
+      </div>
+      <nav class="level is-mobile">
+        <div class="level-left">
+          <a class="level-item" aria-label="reply">
+            <span class="icon is-small">
+              <i class="fas fa-reply" aria-hidden="true"></i>
+            </span>
+          </a>
+          <a class="level-item" aria-label="retweet">
+            <span class="icon is-small">
+              <i class="fas fa-retweet" aria-hidden="true"></i>
+            </span>
+          </a>
+          <a class="level-item" aria-label="like">
+            <span class="icon is-small">
+              <i class="fas fa-heart" aria-hidden="true"></i>
+            </span>
+          </a>
+        </div>
+      </nav>
+      <div style="text-align: center">
+      <button @click=${this.handleActive} style='text-align: center' class="button is-danger">Close</button>
+      </div>
+    </div>
+  </article>
+</div>
+
+  </div>
+</div>
               </div>
             </div>
           </div>
