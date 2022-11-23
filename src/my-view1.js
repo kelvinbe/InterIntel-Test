@@ -80,7 +80,7 @@ render (){
 <div class="field">
   <label class="label">Full Name</label>
   <div class="control">
-    <input class="input" type="text" placeholder="Text input" @input=${this.handleOnChangeName}>
+    <input class="input" type="text" placeholder="Enter Your Name" @input=${this.handleOnChangeName}>
   </div>
 </div>
 
@@ -88,7 +88,7 @@ render (){
 <div class="field">
   <label class="label">Email</label>
   <div class="control has-icons-left has-icons-right">
-    <input class="input" type="email" placeholder="Email input" @input=${this.handleOnChangeEmail}>
+    <input class="input" type="email" placeholder="Enter Your Email" @input=${this.handleOnChangeEmail}>
     <span class="icon is-small is-left">
       <i class="fas fa-envelope"></i>
     </span>
@@ -101,7 +101,7 @@ render (){
 <div class="field">
   <label class="label">Phone Number</label>
   <div class="control">
-    <input class="input" type="text" placeholder="Phone Number" @input=${this.handleOnChangePhone}>
+    <input class="input" type="text" placeholder="Enter Your Phone Number" @input=${this.handleOnChangePhone}>
   </div>
 </div>
 <div class="field is-grouped" style="display: flex; justify-content: center">
