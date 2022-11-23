@@ -94,12 +94,12 @@ class MyView3 extends LitElement {
    <div class="card-content">
      <div class="media">
        <div class="media-content">
-         <p class="title is-4">${todo.title}</p>
+         <p class="title is-4">Title: ${todo.title}</p>
        </div>
      </div>
  
      <div class="title is-4">
-       <p>${todo.completed}</p>
+       <p>Completed: ${todo.completed}</p>
      </div>
    </div>
  </div>
