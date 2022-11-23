@@ -89,7 +89,7 @@ class MyElement extends LitElement {
       ${this.plans.map(
         (plan) => html` 
           <div class="columns is-centered">
-            <div class="column is-one-third">
+            <div class="column is-one-third" style="margin-top: 20px">
               <!-- Your card code: -->
               <div class="card">
                 <div class="card-image">
