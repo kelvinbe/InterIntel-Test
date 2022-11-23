@@ -85,13 +85,13 @@ class MyElement extends LitElement {
     }else{
       display = html`
       ${this.plans.map(
-        (plan) => html` <div class="card">
+        (plan) => html` 
           <div class="columns is-centered">
             <div class="column is-one-third">
               <!-- Your card code: -->
               <div class="card">
                 <div class="card-image">
-                  <figure class="image is-4by1">
+                  <figure class="image">
                     <img
                       src=${plan.image}
                       alt="Placeholder image"
@@ -114,7 +114,7 @@ class MyElement extends LitElement {
               </div>
             </div>
           </div>
-        </div>`
+        `
       )}
     `
     }
