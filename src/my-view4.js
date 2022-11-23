@@ -49,14 +49,14 @@ class DictData extends LitElement {
         a.key > b.key ? 1 : b.key > a.key ? -1 : 0
     ))
 
-    console.log('sorted', sortedDic)
+    console.log('sorted', sortedDic[0])
 
 
 for (const [key, value] of Object.entries(...sortedDic)) {
-    console.log(`${key}: ${value}`);
+    console.log((`${key}: ${value}`))
   }
 
-    this.numbers = [...sortedDic]
+    this.numbers = sortedDic[0]
 
 
   }
@@ -73,16 +73,16 @@ for (const [key, value] of Object.entries(...sortedDic)) {
 
 
   render () {
+
+    
     
     return html`
     <div class="card">
         <h2 class="title is-4">Ordered Data</h2>
         <div>
-        ${JSON.stringify(...this.numbers)}
+       <ul><li>${JSON.stringify(this.numbers).replace(/[{}]/g, '')}</li></ul> 
     </div>
         </div>
-        
-    
     
     `;
   }
