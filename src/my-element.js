@@ -16,7 +16,8 @@ class MyElement extends LitElement {
   static get properties() {
     return {
       plans: { type: Array },
-      show: {type: Boolean}
+      show: {type: Boolean},
+      hidden: {type: Boolean}
     };
   }
 
@@ -33,6 +34,7 @@ class MyElement extends LitElement {
     ];
 
     this.isActive = true
+    this.hidden = true
   }
 
 
@@ -99,7 +101,7 @@ class MyElement extends LitElement {
                   </figure>
                 </div>
                 <div class="card-content">
-                  <div class="title is-4">
+                  <div class="title is-4" style="text-align: center">
                     ${plan.name}
                     <br />
 
