@@ -22,7 +22,8 @@ class MyView1 extends LitElement {
 
       name: {type: String},
       email: {type: String},
-      phone: {type: String}
+      phone: {type: String},
+      isLoading: {type: Boolean}
     }
   }
 
@@ -32,6 +33,7 @@ class MyView1 extends LitElement {
     this.name = ''
     this.email = ''
     this.phone = ''
+    this.isLoading = false
 
 
   }
@@ -69,6 +71,17 @@ class MyView1 extends LitElement {
     alert(details)
   }
 
+
+  async firstUpdated(changedProperties) {
+    super.firstUpdated(changedProperties);
+    setTimeout(() => {
+
+      this.isLoading = true
+
+    }, 8000)
+   this.isLoading = false
+  }
+
   static get styles() {
     return [bulmaStyles];
   }
@@ -76,42 +89,97 @@ class MyView1 extends LitElement {
 
   
 render (){
-    return html`
-<div class="field">
-  <label class="label">Full Name</label>
-  <div class="control">
-    <input class="input" type="text" placeholder="Enter Your Name" @input=${this.handleOnChangeName}>
-  </div>
+
+  let display;
+
+
+  if(this.isLoading === false){
+
+    display = html`
+
+<div class="box">
+  <article class="media">
+    <div class="media-left">
+      <figure class="image is-64x64">
+        <img src="https://media3.giphy.com/media/xUPGcfbMG6a2k2z57O/giphy.gif?cid=6c09b9529e5045c9c6f1793ed8b73da485da03fb6720617f&rid=giphy.gif&ct=g" alt="Image">
+      </figure>
+    </div>
+    <div class="media-content">
+      <div class="content">
+        <p>
+          <strong>Hello</strong>
+          <br>
+          <strong>WELCOME TO THE SIMPLE GET IT DONE TODO APPLICATION</strong> 
+        </p>
+        <small>Sign up to view your name in the console and the alert box</small> 
+
+      </div>
+      <nav class="level is-mobile">
+        <div class="level-left">
+          <a class="level-item" aria-label="reply">
+            <span class="icon is-small">
+              <i class="fas fa-reply" aria-hidden="true"></i>
+            </span>
+          </a>
+          <a class="level-item" aria-label="retweet">
+            <span class="icon is-small">
+              <i class="fas fa-retweet" aria-hidden="true"></i>
+            </span>
+          </a>
+          <a class="level-item" aria-label="like">
+            <span class="icon is-small">
+              <i class="fas fa-heart" aria-hidden="true"></i>
+            </span>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </article>
 </div>
+    
+  
+    `
 
 
-<div class="field">
-  <label class="label">Email</label>
-  <div class="control has-icons-left has-icons-right">
-    <input class="input" type="email" placeholder="Enter Your Email" @input=${this.handleOnChangeEmail}>
-    <span class="icon is-small is-left">
-      <i class="fas fa-envelope"></i>
-    </span>
-    <span class="icon is-small is-right">
-      <i class="fas fa-exclamation-triangle"></i>
-    </span>
-  </div>
-</div>
+  }else {
 
-<div class="field">
-  <label class="label">Phone Number</label>
-  <div class="control">
-    <input class="input" type="text" placeholder="Enter Your Phone Number" @input=${this.handleOnChangePhone}>
-  </div>
-</div>
-<div class="field is-grouped" style="display: flex; justify-content: center">
-  <div class="control" >
-    <button class="button is-link" @click=${this.handleSubmit}>Submit</button>
-  </div>
-  </div>
+    display = html`
+    <div class="field">
+      <label class="label">Full Name</label>
+      <div class="control">
+        <input class="input" type="text" placeholder="Enter Your Name" @input=${this.handleOnChangeName}>
+      </div>
+    </div>
+    
+    
+    <div class="field">
+      <label class="label">Email</label>
+      <div class="control has-icons-left has-icons-right">
+        <input class="input" type="email" placeholder="Enter Your Email" @input=${this.handleOnChangeEmail}>
+        <span class="icon is-small is-left">
+          <i class="fas fa-envelope"></i>
+        </span>
+        <span class="icon is-small is-right">
+          <i class="fas fa-exclamation-triangle"></i>
+        </span>
+      </div>
+    </div>
+    
+    <div class="field">
+      <label class="label">Phone Number</label>
+      <div class="control">
+        <input class="input" type="text" placeholder="Enter Your Phone Number" @input=${this.handleOnChangePhone}>
+      </div>
+    </div>
+    <div class="field is-grouped" style="display: flex; justify-content: center">
+      <div class="control" >
+        <button class="button is-link" @click=${this.handleSubmit}>Submit</button>
+      </div>
+      </div>`
 
+  }
 
-    `;
+    return html `<div>${display}</div>`
   }
 }
 
