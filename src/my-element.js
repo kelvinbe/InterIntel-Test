@@ -31,7 +31,10 @@ class MyElement extends LitElement {
       { name: "Turbo", price: "60ksh/month", NoTodos: `${50} todos`, image: "https://cdn.hswstatic.com/gif/turbo-update.jpg" },
       { name: "Full Turbo", price: "1000ksh/month", NoTodos: `${150} todos`, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAbG53p_5vUPSxTW8WkqfprLZZWmI9yFTqXw&usqp=CAU" },
     ];
+
+    this.isActive = true
   }
+
 
 
   async firstUpdated(changedProperties) {
@@ -46,11 +49,16 @@ class MyElement extends LitElement {
 
   }
 
+ 
+
+
+
   static get styles() {
     return [bulmaStyles];
   }
 
   render() {
+
 
     let display
 
@@ -79,11 +87,11 @@ class MyElement extends LitElement {
       ${this.plans.map(
         (plan) => html` <div class="card">
           <div class="columns is-centered">
-            <div class="column is-half mb-4">
+            <div class="column is-one-third">
               <!-- Your card code: -->
               <div class="card">
                 <div class="card-image">
-                  <figure class="image is-4by3">
+                  <figure class="image is-4by1">
                     <img
                       src=${plan.image}
                       alt="Placeholder image"
